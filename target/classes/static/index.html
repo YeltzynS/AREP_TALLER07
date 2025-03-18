@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Twitter Clone</h1>
+
+    <!-- Contenedor principal para las dos columnas -->
+    <div class="container">
+        <!-- Columna izquierda: Registrar usuarios -->
+        <div class="column">
+            <form id="registerForm">
+                <h2>Registrar Usuario</h2>
+                <input type="text" id="registerName" placeholder="Nombre" required>
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                <input type="password" id="registerPassword" placeholder="Contraseña" required>
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+
+        <!-- Columna derecha: Crear posts -->
+        <div class="column">
+            <form id="postForm">
+                <h2>Crear Post</h2>
+                <select id="userSelect" required>
+                    <option value="">Selecciona un usuario</option>
+                </select>
+                <textarea id="postContent" maxlength="140" placeholder="Escribe tu post..." required></textarea>
+                <button type="submit">Publicar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lista de Usuarios y Posts -->
+    <div id="usersAndPosts">
+        <h2>Usuarios y sus Posts</h2>
+        <div id="users"></div>
+        <div id="posts"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
