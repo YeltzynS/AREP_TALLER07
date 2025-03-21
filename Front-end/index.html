@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Fake</title>
+    <link rel="stylesheet" href="https://my-front-end-taller07.s3.us-east-1.amazonaws.com/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Twitter Fake</h1>
+</header>
+
+<main class="container">
+    <!-- Columna izquierda: Registrar usuarios y crear posts -->
+    <div class="left-column">
+        <form id="registerForm" class="card">
+            <h2>Registrar Usuario</h2>
+            <input type="text" id="registerName" placeholder="Nombre" required>
+            <input type="email" id="registerEmail" placeholder="Email" required>
+            <input type="password" id="registerPassword" placeholder="Contraseña" required>
+            <button type="submit">Registrar</button>
+        </form>
+
+        <form id="postForm" class="card">
+            <h2>Crear Post</h2>
+            <select id="userSelect" required>
+                <option value="">Selecciona un usuario</option>
+            </select>
+            <textarea id="postContent" maxlength="140" placeholder="Escribe tu post..." required></textarea>
+            <button type="submit">Publicar</button>
+        </form>
+    </div>
+
+    <!-- Columna derecha: Lista de usuarios y posts -->
+    <div class="right-column">
+        <div id="usersAndPosts" class="card">
+            <h2>Usuarios y sus Posts</h2>
+            <div id="users"></div>
+            <div id="posts"></div>
+        </div>
+    </div>
+</main>
+
+<script src="https://my-front-end-taller07.s3.us-east-1.amazonaws.com/script.js"></script>
+</body>
+</html>
