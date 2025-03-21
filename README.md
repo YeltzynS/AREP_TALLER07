@@ -151,7 +151,10 @@ AREP_TALLER07/
 
 ### 🎥 Deployment Videos
 
-1. [![🎥 Cognito Deployment Video](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/e2r8dTYEo_I)
+
+1. [![🎥 Monolito Video](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/WQ9JRRP08bE)
+2. [![🎥 Js en S3  Video](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/7tl77i-Wo48)
+3. [![🎥 Cognito Deployment Video](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/e2r8dTYEo_I)
 
 ---
 
