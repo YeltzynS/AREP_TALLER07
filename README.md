@@ -1,180 +1,176 @@
-# AREP_TALLER07
-# **Proyecto: Stream de Posts (Twitter Fake)**
+# **AREP_TALLER07**
+## **Project: Post Streaming Platform (Fake Twitter) 🐦**
 
-## **Contexto del Proyecto**
+### **Project Context** 📖
+This project is a web application inspired by Twitter, where users can register, create posts (up to 140 characters), and view them in a single stream. The main objective is to develop a full-stack application, from backend to frontend, using modern technologies and AWS cloud services.
 
-Este proyecto es una aplicación web inspirada en Twitter, donde los usuarios pueden registrarse, hacer posts de hasta 140 caracteres y visualizarlos en un stream único. El objetivo principal es demostrar el desarrollo de una aplicación full-stack, desde el backend hasta el frontend, utilizando tecnologías modernas y servicios en la nube de AWS.
-
-El proyecto se divide en varias fases:
-1. **Desarrollo del monolito**: Una aplicación Spring Boot que maneja usuarios, posts y el stream único.
-2. **Frontend**: Una aplicación JavaScript que consume el API del backend.
-3. **Despliegue en la nube**: Uso de Amazon S3 para el frontend y EC2 para el backend.
-4. **Seguridad**: Implementación de autenticación y autorización usando JWT y AWS Cognito.
-5. **Microservicios**: Migración del monolito a una arquitectura de microservicios desplegados en AWS Lambda.
-
----
-
-
-
-## **Requisitos**
-
-- **Backend**: Spring Boot (Java).
-- **Frontend**: JavaScript, HTML, CSS.
-- **Despliegue**:
-  - Frontend: Amazon S3.
-  - Backend: Amazon EC2 (monolito) y AWS Lambda (microservicios).
-- **Seguridad**: JWT con AWS Cognito.
+The project consists of multiple phases:
+1. **Monolithic Development** 🏗️: A Spring Boot application handling users, posts, and the post stream.
+2. **Frontend Implementation** 🎨: A JavaScript-based web app consuming the backend API.
+3. **Cloud Deployment** ☁️: Using Amazon S3 for frontend and EC2 for backend.
+4. **Security Implementation** 🔐: Authentication and authorization with JWT and AWS Cognito.
+5. **Microservices Migration** ⚡: Converting the monolith into a microservices architecture deployed on AWS Lambda.
 
 ---
 
-## **Arquitectura del Proyecto**
+## **Requirements** 🛠️
+- **Backend**: Spring Boot (Java) ☕
+- **Frontend**: JavaScript, HTML, CSS 🌐
+- **Cloud Deployment**:
+  - Frontend: **Amazon S3** 📦
+  - Backend: **Amazon EC2** (monolith) and **AWS Lambda** (microservices) 🌍
+- **Security**: JWT with **AWS Cognito** 🔑
 
-El proyecto sigue una arquitectura de tres capas:
+---
 
-1. **Frontend**: Aplicación web estática alojada en **Amazon S3**.
+## **Project Architecture** 🏛️
+The project follows a three-tier architecture:
+
+1. **Frontend**: A static web application hosted on **Amazon S3**.
 2. **Backend**:
-   - **Monolito**: Aplicación Spring Boot desplegada en **EC2**.
-   - **Microservicios**: Tres servicios independientes desplegados en **AWS Lambda**.
-3. **Seguridad**: Autenticación y autorización con **JWT** y **AWS Cognito**.
+   - **Monolith**: A Spring Boot application deployed on **EC2**.
+   - **Microservices**: Three independent services deployed on **AWS Lambda**.
+3. **Security**: Authentication and authorization using **JWT** and **AWS Cognito**.
 
 ---
-## Arquitectura
-```Bash
+
+## **Project Structure** 📂
+```bash
 AREP_TALLER07/
-│── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── com/edu/eci/arep/arep_taller07/config
-│   │   │   │   ├── SecurityConfiguration.java
-│   │   │   │   ├── CorsConfig.java
-│   │   │   │   ├── CognitoLogoutHandler.java
-│   │   │   │   ├── .java
-│   │   │   ├── com/edu/eci/arep/clase6/Contoller
-│   │   │   │   ├── PropertyController.java
-│   │   │   │   ├── AuthController.java
-│   │   │   │   ├── HelloController.java
-│   │   │   ├── com/edu/eci/arep/clase6/Model
-│   │   │   │   ├── Property.java
-│   │   │   │   ├── User.java
-│   │   │   ├── com/edu/eci/arep/clase6/dto
-│   │   │   │   ├── UserDto.java
-│   │   │   ├── com/edu/eci/arep/clase6/Repository
-│   │   │   │   ├── PropertyRepository.java
-│   │   │   │   ├── UserRepository.java
-│   │   │   ├── com/edu/eci/arep/clase6/Service
-│   │   │   │   ├── PropertyService.java
-│   │   │   │   ├── UserService.java
-│   │   │   ├── WebSecure.java
-│   ├── resources/
-│   │   ├── img
-│   │   ├── keystore
-│   │   │   │── keystore.12
-│   │   │   │── server.cer
-│   │   ├── static
-│   │   │   │── style.css
-│   │   │   │── script.js
-│   │   │   ├── index.html
-│   │   │   │── loginscript.js
-│   │   │   ├── login.html
-│   │   ├── truststore
-│   │   │   │── truststore.12
-│   │   ├── application.properties
-│── pom.xml
+│── Back-end/
+│ ├── src/
+│ │ ├── main/
+│ │ │ ├── java/
+│ │ │ │ ├── com/eci/arep/arep_taller07/
+│ │ │ │ │ ├── config/
+│ │ │ │ │ │ ├── CognitoLogoutHandler.java
+│ │ │ │ │ │ ├── CorsConfig.java
+│ │ │ │ │ │ ├── SecurityConfiguration.java
+│ │ │ │ │ │ ├── WebConfiguration.java
+│ │ │ │ │ ├── controller/
+│ │ │ │ │ │ ├── AuthController.java
+│ │ │ │ │ │ ├── PostController.java
+│ │ │ │ │ │ ├── PostStreamController.java
+│ │ │ │ │ │ ├── UserController.java
+│ │ │ │ │ ├── model/
+│ │ │ │ │ │ ├── Post.java
+│ │ │ │ │ │ ├── PostStream.java
+│ │ │ │ │ │ ├── User.java
+│ │ │ │ │ ├── repository/
+│ │ │ │ │ │ ├── PostRepository.java
+│ │ │ │ │ │ ├── PostStreamRepository.java
+│ │ │ │ │ │ ├── UserRepository.java
+│ │ │ │ │ ├── service/
+│ │ │ │ │ │ ├── PostService.java
+│ │ │ │ │ │ ├── PostStreamService.java
+│ │ │ │ │ │ ├── UserService.java
+│ │ │ │ │ ├── AppSpringBoot.java
+│ │ │ ├── resources/
+│ │ │ │ ├── application.properties
+│ │ │ │ ├── login.html
+│ ├── target/
+│ ├── pom.xml
+│── Front-end/
+│ ├── index.html
+│ ├── script.js
+│ ├── styles.css
 │── README.md
-│── Dockerfile
-│── docker-compose.yml
 ```
 
+---
 
-## **Entidades del Sistema**
+## **Entities** 📜
 
-El sistema está compuesto por las siguientes entidades:
+### **1. User** 👤
+- `id`: Unique identifier.
+- `name`: User's name.
+- `email`: User's email.
+- `password`: Hashed password.
 
-1. **Usuario**:
-   - `id`: Identificador único.
-   - `name`: Nombre del usuario.
-   - `email`: Correo electrónico.
-   - `password`: Contraseña.
+### **2. Post** ✍️
+- `id`: Unique identifier.
+- `content`: Post content (max 140 characters).
+- `user`: The user who created the post.
 
-2. **Post**:
-   - `id`: Identificador único.
-   - `content`: Contenido del post (máximo 140 caracteres).
-   - `user`: Usuario que hizo el post.
-
-3. **Stream**:
-   - `id`: Identificador único.
-   - `posts`: Lista de posts en el stream.
+### **3. Stream** 📢
+- `id`: Unique identifier.
+- `posts`: List of posts in the stream.
 
 ---
 
-## **Instalación y Despliegue**
+## **Installation & Deployment** 🚀
 
-### **1. Frontend (Amazon S3)**
-1. **Construye el Frontend**:
-   - Genera los archivos estáticos (HTML, CSS, JS) usando tu herramienta preferida (por ejemplo, `npm run build`).
-2. **Sube los Archivos a S3**:
-   - Crea un bucket en S3 y habilita el **hosting estático**.
-   - Sube los archivos estáticos al bucket.
-   - Configura los permisos para que los archivos sean públicos.
-3. **Accede a la Aplicación**:
-   - La URL de tu aplicación será:
-     ```
-     http://<nombre-del-bucket>.s3-website-<region>.amazonaws.com
-     ```
+### **1. Frontend Deployment (Amazon S3)** 🌍
+1. **Build the frontend**:
+   ```bash
+   npm run build
+   ```
+2. **Upload the static files to S3**:
+   - Create an S3 bucket.
+   - Enable **static website hosting**.
+   - Upload `index.html`, `styles.css`, and `script.js`.
+   - Set public read permissions.
+3. **Access the application**:
+   ```
+   http://<bucket-name>.s3-website-<region>.amazonaws.com
+   ```
 
-### **2. Backend (Spring Boot en EC2)**
-1. **Empaqueta la Aplicación**:
-   - Genera el archivo JAR:
-     ```bash
-     mvn clean package
-     ```
-2. **Despliega en EC2**:
-   - Conéctate a tu instancia EC2 usando SSH.
-   - Copia el archivo JAR a la instancia:
-     ```bash
-     scp -i myfirstkey.pem target/mi-aplicacion.jar ec2-user@<ip-publica>:/home/ec2-user/
-     ```
-   - Ejecuta la aplicación:
-     ```bash
-     java -jar mi-aplicacion.jar
-     ```
+### **2. Backend Deployment (Spring Boot on EC2)** 🖥️
+1. **Package the application**:
+   ```bash
+   mvn clean package
+   ```
+2. **Deploy to EC2**:
+   ```bash
+   scp -i mykey.pem target/app.jar ec2-user@<ec2-ip>:/home/ec2-user/
+   ssh -i mykey.pem ec2-user@<ec2-ip>
+   java -jar app.jar
+   ```
 
-
-
-
-## **Seguridad con JWT y Cognito**
-
-1. **Configura AWS Cognito**:
-   - Crea un **User Pool** en Cognito.
-   - Configura los **App Clients** para tu aplicación.
-2. **Integra JWT en el Backend**:
-   - Usa una librería como **Spring Security** para validar los tokens JWT.
-3. **Protege los Endpoints**:
-   - Asegura los endpoints del backend para que requieran autenticación.
+### **3. Docker Deployment (Optional)** 🐳
+1. **Build Docker image**:
+   ```bash
+   docker build -t my-app .
+   ```
+2. **Run Docker container**:
+   ```bash
+   docker run -p 8080:8080 my-app
+   ```
 
 ---
 
-## **Microservices Architecture**
+## **Security with JWT & AWS Cognito** 🔐
 
-### **Descripción**
+### **1. AWS Cognito Setup**
+1. Create a **User Pool** in AWS Cognito.
+2. Configure **App Clients**.
 
-El monolito original se dividió en tres microservicios independientes, cada uno con una responsabilidad específica:
-1. **Users Service**: Maneja la autenticación y gestión de usuarios.
-2. **Posts Service**: Maneja la creación y lectura de posts.
-3. **Stream Service**: Maneja el stream único de posts.
-
-
-
-## **Contribuidores**
-
-- Diego Chicuazuque
-- Manuel Suarez
-- Yeltzyn Sierra
+### **2. Backend JWT Integration**
+1. Validate JWT using **Spring Security**.
+2. Secure API endpoints.
 
 ---
 
-## **Licencia**
+## **Microservices Architecture** 🏗️
 
-Este proyecto está bajo la licencia [MIT](https://opensource.org/licenses/MIT).
+The original monolith was split into three independent microservices:
+1. **Users Service** 👤: Handles user authentication and management.
+2. **Posts Service** ✍️: Manages post creation and retrieval.
+3. **Stream Service** 📢: Manages the global post stream.
+
+These services are deployed on **AWS Lambda**.
 
 ---
+
+## **Contributors** 🤝
+- **Diego Chicuazuque**
+- **Manuel Suárez**
+- **Yeltzyn Sierra**
+
+---
+
+## **License** 📜
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
